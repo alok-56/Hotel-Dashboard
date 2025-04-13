@@ -48,21 +48,21 @@ export const NAVIGATION = [
     title: "Reports",
     icon: <BarChartIcon />,
     children: [
-      {
-        segment: "sales",
-        title: "Sales",
-        icon: <AttachMoneyIcon />,
-      },
+    //   {
+    //     segment: "sales",
+    //     title: "Sales",
+    //     icon: <AttachMoneyIcon />,
+    //   },
       {
         segment: "salary",
         title: "Salary",
         icon: <AccountBalanceWalletIcon />,
       },
-      {
-        segment: "expence",
-        title: "Expence",
-        icon: <AccountBalanceWalletIcon />,
-      },
+    //   {
+    //     segment: "expence",
+    //     title: "Expence",
+    //     icon: <AccountBalanceWalletIcon />,
+    //   },
     ],
   },
   {

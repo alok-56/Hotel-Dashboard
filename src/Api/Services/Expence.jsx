@@ -2,31 +2,11 @@ import { BASEURL } from "../BaseUrl";
 import Cookies from "js-cookie";
 
 
-// Create Staff
-export const CreateStaffApi = async (payload) => {
+// Create Expense
+export const CreateExpenseApi = async (payload) => {
     let token = Cookies.get("token");
     try {
-        let response = await fetch(`${BASEURL}/Staff/create/Staff`, {
-            method: "POST",
-            body: JSON.stringify(payload),
-            headers: {
-                'Content-type': 'application/json',
-                'token': token
-            }
-        })
-        response = await response.json()
-        return response
-    } catch (error) {
-        return error.message
-    }
-}
-
-
-// Create Salary
-export const CreateSalaryApi = async (payload) => {
-    let token = Cookies.get("token");
-    try {
-        let response = await fetch(`${BASEURL}/Staff/create/Salary`, {
+        let response = await fetch(`${BASEURL}/Expense/create/Expense`, {
             method: "POST",
             body: JSON.stringify(payload),
             headers: {
@@ -42,10 +22,10 @@ export const CreateSalaryApi = async (payload) => {
 }
 
 // Update Update
-export const UpdateStaffApi = async (payload, id) => {
+export const UpdateExpenseApi = async (payload, id) => {
     let token = Cookies.get("token");
     try {
-        let response = await fetch(`${BASEURL}/Staff/update/Staff/${id}`, {
+        let response = await fetch(`${BASEURL}/Expense/update/Expense/${id}`, {
             method: "PATCH",
             body: JSON.stringify(payload),
             headers: {
@@ -62,11 +42,11 @@ export const UpdateStaffApi = async (payload, id) => {
 
 
 
-//  Get All Staff
-export const GetAllStaffApi = async () => {
+//  Get All Expense
+export const GetAllExpenseApi = async () => {
     let token = Cookies.get("token")
     try {
-        let response = await fetch(`${BASEURL}/Staff/getall/Staff`, {
+        let response = await fetch(`${BASEURL}/Expense/getall/Expense`, {
             method: "GET",
             headers: {
                 'Content-type': 'application/json',
@@ -81,12 +61,11 @@ export const GetAllStaffApi = async () => {
 }
 
 
-//  Get All Salary
-export const GetAllSalaryApi = async () => {
-    let token = Cookies.get("token")
+export const DeleteExpenseApi = async (id) => {
+    let token = Cookies.get("token");
     try {
-        let response = await fetch(`${BASEURL}/Staff/getall/Salary`, {
-            method: "GET",
+        let response = await fetch(`${BASEURL}/Expense/delete/Expense/${id}`, {
+            method: "DELETE",
             headers: {
                 'Content-type': 'application/json',
                 'token': token
@@ -98,4 +77,3 @@ export const GetAllSalaryApi = async () => {
         return error.message
     }
 }
-
