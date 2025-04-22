@@ -49,7 +49,7 @@ const Dashboard = () => {
             if (res.status) {
                 const allBranches = res.data.Branch || [];
                 setBranches(allBranches);
-                setSelectedBranches(allBranches); // Select all initially
+                setSelectedBranches(allBranches); 
             }
         } catch (error) {
             console.error("Error fetching profile/branches:", error);
