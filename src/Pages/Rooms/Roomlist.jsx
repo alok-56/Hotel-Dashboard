@@ -60,7 +60,7 @@ export default function RoomList() {
             id: 'BranchId',
             label: 'Branch',
             minWidth: 150,
-            render: (branchId) => branchId.Branchname || '-',
+            render: (branchId) => branchId?.Branchname || '-',
         },
     ];
 
