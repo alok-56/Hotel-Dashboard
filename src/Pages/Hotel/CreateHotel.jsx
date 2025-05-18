@@ -101,9 +101,10 @@ const CreateHotel = ({ open = false, onClose, edit, selectedHotel, onSubmit, onE
     };
 
     const handleFileUpload = (section) => async (e) => {
+         
         const files = Array.from(e.target.files);
-        if (!files.length) return;
-        setLoading(true)
+        if (!files.length) return
+       setLoading(true)
         const res = await MultipleFileUpload(files);
 
         if (res?.status && Array.isArray(res.data)) {
@@ -230,7 +231,7 @@ const CreateHotel = ({ open = false, onClose, edit, selectedHotel, onSubmit, onE
                                 </Box>
 
                                 {
-                                    preview[section]?.length > 0 && (
+                                    preview[section]?.length >=0 && (
                                         <Box mt={2} display="flex" flexWrap="wrap" gap={2}>
                                             {loading ? <CircularProgress /> : preview[section].map((src, index) => (
 

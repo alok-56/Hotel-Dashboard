@@ -211,7 +211,7 @@ const CreateRoom = ({ open = false, onClose, edit, selectedRoom, onSubmit, onEdi
                             />
                         </Box>
 
-                        {preview.length > 0 && (
+                        {preview.length >= 0 && (
                             <Box mt={2} display="flex" flexWrap="wrap" gap={2}>
                                 {loading ? (
                                     <CircularProgress />
