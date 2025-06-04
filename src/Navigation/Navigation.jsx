@@ -10,6 +10,7 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import HotelIcon from "@mui/icons-material/Hotel";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import GroupIcon from "@mui/icons-material/Group";
+import InventoryIcon from "@mui/icons-material/Storefront";
 
 export const NAVIGATION = [
   {
@@ -37,6 +38,11 @@ export const NAVIGATION = [
     icon: <PaymentIcon />,
   },
   {
+    segment: "inventory",
+    title: "Inventory",
+    icon: <InventoryIcon />,
+  },
+  {
     kind: "divider",
   },
   {
@@ -48,21 +54,41 @@ export const NAVIGATION = [
     title: "Reports",
     icon: <BarChartIcon />,
     children: [
-    //   {
-    //     segment: "sales",
-    //     title: "Sales",
-    //     icon: <AttachMoneyIcon />,
-    //   },
+      {
+        segment: "bookingreport",
+        title: "Booking",
+        icon: <AttachMoneyIcon />,
+      },
       {
         segment: "salary",
         title: "Salary",
         icon: <AccountBalanceWalletIcon />,
       },
-    //   {
-    //     segment: "expence",
-    //     title: "Expence",
-    //     icon: <AccountBalanceWalletIcon />,
-    //   },
+    ],
+  },
+
+  {
+    kind: "divider",
+  },
+  {
+    kind: "header",
+    title: "Bussiness",
+  },
+  {
+    segment: "bussiness",
+    title: "Bussiness",
+    icon: <BarChartIcon />,
+    children: [
+      {
+        segment: "b2b",
+        title: "B2B",
+        icon: <AttachMoneyIcon />,
+      },
+      {
+        segment: "listproperty",
+        title: "List Property",
+        icon: <AccountBalanceWalletIcon />,
+      },
     ],
   },
   {

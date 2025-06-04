@@ -78,7 +78,6 @@ export const GetAllRoomApi = async () => {
 }
 
 // Search Room
-
 export const SearchRoomApi = async (branchid, checkindate, checkoutdate) => {
     let token = Cookies.get("token");
     try {
@@ -95,3 +94,44 @@ export const SearchRoomApi = async (branchid, checkindate, checkoutdate) => {
         return error.message
     }
 }
+
+// Room Inventry
+
+export const GetRoomInventry = async (branchid, date) => {
+    let token = Cookies.get("token");
+    try {
+        let response = await fetch(`${BASEURL}/Room/room/inventry?branchId=${branchid}&date=${date}`, {
+            method: "GET",
+            headers: {
+                'Content-type': 'application/json',
+                'token': token
+            }
+        })
+        response = await response.json()
+        return response
+    } catch (error) {
+        return error.message
+    }
+}
+
+
+// Hotel with room
+
+export const GetRoomInventryHotel = async (branchid, date) => {
+    let token = Cookies.get("token");
+    try {
+        let response = await fetch(`${BASEURL}/Room/room/inventry/hotel`, {
+            method: "GET",
+            headers: {
+                'Content-type': 'application/json',
+                'token': token
+            }
+        })
+        response = await response.json()
+        return response
+    } catch (error) {
+        return error.message
+    }
+}
+
+

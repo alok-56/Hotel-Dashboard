@@ -115,18 +115,6 @@ export default function LoginPage() {
                     <Button variant="contained" sx={{ mt: 2 }} fullWidth onClick={HandleLogin}>
                         Log in
                     </Button>
-
-
-                    <Typography
-                        variant="body2"
-                        align="center"
-                        sx={{ fontSize: '0.875rem', mt: 2 }}
-                    >
-                        Don&apos;t have an account?{' '}
-                        <Link href="/sign-up" variant="body2">
-                            Sign up
-                        </Link>
-                    </Typography>
                 </Box>
             </Container>
         </main>

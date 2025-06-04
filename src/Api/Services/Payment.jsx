@@ -21,10 +21,11 @@ export const CreateOfflineBookingApi = async (payload) => {
 }
 
 // Update Status 
-export const UpdateStatusOfflineBookingApi = async (status, id) => {
+export const UpdateStatusOfflineBookingApi = async (status, id, extrachargeamt) => {
+    console.log(extrachargeamt)
     let token = Cookies.get("token");
     try {
-        let response = await fetch(`${BASEURL}/booking/update/book/status?status=${status}&bookingid=${id}`, {
+        let response = await fetch(`${BASEURL}/booking/update/book/status?status=${status}&bookingid=${id}&extracharge=${extrachargeamt}`, {
             method: "PATCH",
             headers: {
                 'Content-type': 'application/json',
@@ -75,3 +76,59 @@ export const GetAllPaymentApi = async (status = true) => {
     }
 }
 
+// Add Extra charge
+export const AddExtra = async (payload) => {
+    console.log(payload)
+    let token = Cookies.get("token");
+    try {
+        let response = await fetch(`${BASEURL}/booking/add/extra`, {
+            method: "POST",
+            body: JSON.stringify(payload),
+            headers: {
+                'Content-type': 'application/json',
+                'token': token
+            }
+        })
+        response = await response.json()
+        return response
+    } catch (error) {
+        return error.message
+    }
+}
+
+// Get Extra charge by Id
+export const GetExtra = async (bookingid) => {
+    let token = Cookies.get("token");
+    try {
+        let response = await fetch(`${BASEURL}/booking/get/extra/${bookingid}`, {
+            method: "GET",
+            headers: {
+                'Content-type': 'application/json',
+                'token': token
+            }
+        })
+        response = await response.json()
+        return response
+    } catch (error) {
+        return error.message
+    }
+}
+
+// delete extra charge
+
+export const DeleteExtra = async (id) => {
+    let token = Cookies.get("token");
+    try {
+        let response = await fetch(`${BASEURL}/booking/extra/delete/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json',
+                'token': token
+            }
+        })
+        response = await response.json()
+        return response
+    } catch (error) {
+        return error.message
+    }
+}
